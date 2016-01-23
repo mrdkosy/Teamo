@@ -2,35 +2,31 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>top</title>
+	<link rel="stylesheet" href="./stylesheets/teamo.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="./back.js"></script>
 </head>
-<body>
- <header>
- 	<h1>Teamo</h1>
- </header>
- <form action="play.php" method "post"> 
- 	<p>プレーヤー新規登録</p>
-	<input type="text" name="name" size="30" maxlength="20">
-	<input type="button" value="確定">
-</form>
-<form action="play2.php" method "post"> 
- 	<p>登録済みの方はこちら</p>
-	<input type="text" name="name" size="30" maxlength="20">
-	<input type="button" value="確定">
-</form>
-<?php 
-echo "hello";
-try {
-	$db=new PDO("sqlite:teamo3.sql");
+<body onload="init();">
 
+	<canvas id="canvas" width=700 height=500></canvas>
+	<script>
+		// canvasサイズをスクリーンサイズに合わせる
+		$('#canvas').attr('width', window.parent.screen.width);
+		$('#canvas').attr('height',window.parent.screen.height);   
+	</script>
 
-	
-} catch (PDOException $e) {
-	echo "faulse";
-}
-
- ?>
-	<div id="enchant-stage"></div>
-	<script type="text/javascript" src="enchant.js"></script>
-	<script type="text/javascript" src="main.js"></script>
+	<header>
+		<img src="./images/topbar2.png">
+		<h1>Teamo</h1>
+		<div class="circleMenu" style="right: 160px; background-color: rgb(250, 250, 250);"><div class="circleFont" style="color: rgb(253, 144, 166);">step1</div></div>
+		<div class="circleMenu" style="right: 100px"><div class="circleFont">step2</div></div>
+		<div class="circleMenu" style="right: 40px"><div class="circleFont">step3</div></div>
+	</header>
+	<a href="./index.php">
+		<div id="gamestart">
+			<p>Game Start</p>
+		</div>
+	</a>
 </body>
 </html>

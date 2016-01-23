@@ -15,6 +15,12 @@ div{
 p{
 	margin-bottom: 0;
 }
+
+a{
+	text-decoration: none;
+	color: #808080;
+}
+
 /***********************************/
 /*canvas*/
 /***********************************/
@@ -35,7 +41,7 @@ header img{
 	height: 100px;
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: -450px;
 	opacity: .75;
 	/*border-bottom: solid 2px #fff;*/
 }
@@ -60,7 +66,7 @@ header h1{
 	border: solid 2px rgba(0,0,0,0);
 }
 .circleMenu:hover{
-	border: solid 2px rgb(253, 247, 213);
+	border: solid 2px rgba(253, 144, 166, .75);
 }
 .circleFont{
 	color: rgb(253, 247, 213);
@@ -86,3 +92,31 @@ header h1{
 .play{
 	width: 800px;
 }
+
+/***********************************/
+/*index.html*/
+/***********************************/
+#gamestart{
+	display: block;
+	width: 140px;
+	margin: 300px auto 0 auto;
+	padding: 0px 20px 20px 25px;
+	border: 1px solid #a9a9a9;
+	border-radius: 5px;
+	background-color: rgba(253, 247, 213, .75);
+	font-size: 25px;
+	text-align: center;
+}
+#gamestart:hover{
+	border: 1px solid rgb(253, 144, 166);
+}
+
+
+
+
+
+
+
+
+
+
