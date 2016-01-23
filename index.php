@@ -2,47 +2,68 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>top</title>
+	<link rel="stylesheet" href="./stylesheets/teamo.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="./back.js"></script>
 </head>
-<body>
- <header>
- 	<h1>Teamo</h1>
- </header>
- <form action="play.php" method "get"> 
- 	<div>プレーヤー新規登録</div>
-	<input type="text" name="newname" size="30" maxlength="20">
-	<select name="music">
-		<option value="Xmas">Xmas Song</option>
-		<option value="Love">Love Song</option>
-		<option value="happy">Happy Song</option>
-		<option value="winter">Winter Song</option>
-	</select>
-	<input type="submit" value="確定">
-</form>
-<form action="play2.php" method "post"> 
- 	<div>登録済みの方はこちら</div>
-	<input type="text" name="name" size="30" maxlength="20">
-	<select name="music">
-		<option value="XmasSong">Xmas Song</option>
-		<option value="LoveSong">Love Song</option>
-		<option value="happySong">Happy Song</option>
-		<option value="winterSong">Winter Song</option>
-	</select>
-	<input type="submit" value="ログイン"> 
-</form>
-<?php 
-try {
-	$db=new PDO("sqlite:teamo3.sql");
-	echo "true";
-	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
-	$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-	
-} catch (PDOException $e) {
-	echo "faulse";
-}
+<body onload="init();">
 
- ?>
-	<!--<div id="enchant-stage"></div>
-	<script type="text/javascript" src="enchant.js"></script>
-	<script type="text/javascript" src="main.js"></script>-->
+	<canvas id="canvas" width=700 height=500></canvas>
+	<script>
+		// canvasサイズをスクリーンサイズに合わせる
+		$('#canvas').attr('width', window.parent.screen.width);
+		$('#canvas').attr('height',window.parent.screen.height);   
+	</script>
+
+	<header>
+		<img src="./images/topbar2.png">
+		<h1>Teamo</h1>
+		<div class="circleMenu" style="right: 160px"><div class="circleFont">step1</div></div>
+		<div class="circleMenu" style="right: 100px; background-color: rgb(250, 250, 250);"><div class="circleFont" style="color: rgb(253, 144, 166);">step2</div></div>
+		<div class="circleMenu" style="right: 40px"><div class="circleFont">step3</div></div>
+	</header>
+
+	<div id="main" class="index">
+		<form action="play.php" method "get"> 
+			<p>プレーヤー新規登録</p>
+			<input type="text" name="newname" size="30" maxlength="20">
+			<select name="music">
+				<option value="Xmas">Xmas Song</option>
+				<option value="Love">Love Song</option>
+				<option value="happy">Happy Song</option>
+				<option value="winter">Winter Song</option>
+			</select>
+			<input type="submit" value="確定">
+		</form>
+
+		<form action="play2.php" method "post"> 
+			<p>登録済みの方はこちら</p>
+			<input type="text" name="name" size="30" maxlength="20">
+			<select name="music">
+				<option value="XmasSong">Xmas Song</option>
+				<option value="LoveSong">Love Song</option>
+				<option value="happySong">Happy Song</option>
+				<option value="winterSong">Winter Song</option>
+			</select>
+			<input type="submit" value="ログイン"> 
+		</form>
+		<?php 
+		try {
+			$db=new PDO("sqlite:teamo3.sql");
+			echo "true";
+			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
+			$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+		} catch (PDOException $e) {
+			echo "faulse";
+		}
+
+		?>
+		<!--<div id="enchant-stage"></div>
+		<script type="text/javascript" src="enchant.js"></script>
+		<script type="text/javascript" src="main.js"></script>-->
+	</div>
+	<!-- <div style="margin-bottom: 10000px"></div> -->
 </body>
 </html>

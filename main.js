@@ -25,7 +25,7 @@
 
 		function Game(parms) {
 			enchant();
-			_game = new Core(800, 600);
+			_game = new Core(800, 600); //ゲームの横幅、縦幅
 			_game.fps = 30;
 			_game.preload("icon.png", "shadow.png");
 			_game.start();
