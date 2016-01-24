@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>top</title>
 	<link rel="stylesheet" href="./stylesheets/teamo.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -19,9 +20,10 @@
 	<header>
 		<img src="./images/topbar2.png">
 		<h1>Teamo</h1>
-		<div class="circleMenu" style="right: 160px"><div class="circleFont">step1</div></div>
-		<div class="circleMenu" style="right: 100px; background-color: rgb(250, 250, 250);"><div class="circleFont" style="color: rgb(253, 144, 166);">step2</div></div>
-		<div class="circleMenu" style="right: 40px"><div class="circleFont">step3</div></div>
+		<div class="circleMenu" style="right: 220px"><div class="circleFont">step1</div></div>
+		<div class="circleMenu" style="right: 160px; background-color: rgb(250, 250, 250);"><div class="circleFont" style="color: rgb(253, 144, 166);">step2</div></div>
+		<div class="circleMenu" style="right: 100px"><div class="circleFont">step3</div></div>
+		<div class="circleMenu" style="right: 40px"><div class="circleFont">step4</div></div>
 	</header>
 
 	<div id="main" class="index">

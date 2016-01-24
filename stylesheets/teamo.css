@@ -2,10 +2,14 @@
 	font-family: 'MyFont';
 	src: url(./Hannari.otf);
 }
+@font-face { 
+	font-family: 'eMyFont';
+	src: url(./OpenBaskerville-0.0.75.ttf);
+}
 
 body{
 	color: #808080;
-	font-family: MyFont;
+	font-family: eMyFont, MyFont;
 }
 
 div{
@@ -41,7 +45,7 @@ header img{
 	height: 100px;
 	position: fixed;
 	top: 0;
-	left: -450px;
+	left: -200px;
 	opacity: .75;
 	/*border-bottom: solid 2px #fff;*/
 }
@@ -49,8 +53,8 @@ header img{
 header h1{
 	position: fixed;
 	font-size: 60px;
-	top: 2px;
-	left: 20px;
+	top: 12px;
+	left: 30px;
 	margin: 0;
 	font-weight: bold;
 }
@@ -66,12 +70,12 @@ header h1{
 	border: solid 2px rgba(0,0,0,0);
 }
 .circleMenu:hover{
-	border: solid 2px rgba(253, 144, 166, .75);
+	border: solid 2px rgba(253, 247, 213, .75);
 }
 .circleFont{
 	color: rgb(253, 247, 213);
 	position: relative;
-	top: 11px;
+	top: 13px;
 }
 
 /***********************************/
@@ -79,7 +83,6 @@ header h1{
 /***********************************/
 #main{
 	display: block;
-	margin: 200px auto 0 auto;
 	padding: 20px;
 	border: 1px solid #a9a9a9;
 	background-color: rgba(255, 255, 255, .6);
@@ -87,10 +90,16 @@ header h1{
 }
 .index{
 	width: 400px;
+	margin: 200px auto 0 auto;
 }
 
 .play{
 	width: 800px;
+	margin: 150px auto 0 auto;
+}
+.rank{
+	width: 400px;
+	margin: 200px auto 0 auto;	
 }
 
 /***********************************/
@@ -110,7 +119,27 @@ header h1{
 #gamestart:hover{
 	border: 1px solid rgb(253, 144, 166);
 }
+/***********************************/
+/*rank.php*/
+/***********************************/
+.rank{
+	text-align: center;
+}
+.rank .seleciton{
+	width: 180px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: rgba(253, 247, 213, .75);
+	border: 1px solid #a9a9a9;
+	text-align: center;
+	margin: 0 5px;
+	padding-top: 12px;
+	padding-bottom: -3px;
+}
 
+.rank .seleciton:hover{
+	border: 1px solid rgb(253, 144, 166);
+}
 
 
 

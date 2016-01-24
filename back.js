@@ -1,9 +1,10 @@
 var count = 0;
 var nowNUM = 15;
+var nowNUMcount = 0;
 var tree = new Image();
 tree.src = "./images/f_branch536.png";
 var sakuraNUM = 5; //花びら画像の数
-var fubuki = 50; //飛ばす花びらの数
+var fubuki = 120; //飛ばす花びらの数
 var sakura = new Array(sakuraNUM);
 for(var i=0; i<sakuraNUM; i++){
 	sakura[i] = new Image();
@@ -27,8 +28,8 @@ function loop(){
 		sakuraSizeY[i] = 0;
 		sakuraPositionX[i] = Math.random()*300+200;
 		sakuraPositionY[i] = Math.random()*150+300;
-		sakuraSpeedX[i] = Math.random()*0.9+0.05;
-		sakuraSpeedY[i] = Math.random()*0.6+0.01;
+		sakuraSpeedX[i] = Math.random()*1.2+0.8;
+		sakuraSpeedY[i] = Math.random()*1.2+0.01;
 	}
 
 }
@@ -37,7 +38,7 @@ function init(){
 	canvas = document.getElementById("canvas");
 	if ( canvas.getContext ){
 		context = canvas.getContext("2d");
-		setInterval( draw , 10 );
+		setInterval( draw , 30 );
 	}
 	loop();
 }
@@ -68,11 +69,16 @@ function draw(){
 	}
 
 	count++;
-	if(count%60 == 0){
+	if(count%20 == 0){
 		nowNUM++;
 		if(nowNUM > fubuki){
-			nowNUM = 15;
-			loop();
+			nowNUM = fubuki;
+			nowNUMcount++;
+			if(nowNUMcount > 25){
+				loop();
+				nowNUM = 15;
+				nowNUMcount = 0;
+			}
 		}
 	}
 
