@@ -76,6 +76,10 @@
 		<div id="enchant-stage"></div>
 		<script type="text/javascript" src="enchant.js"></script>
 		<script type="text/javascript" src="main.js"></script>
+		<script>
+			var hoge = <?php echo json_encode($_GET['music']); ?>;
+			ID(hoge);
+		</script>
 	</div>
 </body>
 </html>

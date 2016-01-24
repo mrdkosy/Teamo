@@ -31,10 +31,10 @@
 			<p>プレーヤー新規登録</p>
 			<input type="text" name="newname" size="30" maxlength="20">
 			<select name="music">
-				<option value="Xmas">Xmas Song</option>
-				<option value="Love">Love Song</option>
-				<option value="happy">Happy Song</option>
-				<option value="winter">Winter Song</option>
+				<option value=0>クリスマス・ソング</option>
+				<option value=1>トリセツ</option>
+				<option value=2>R.Y.U.S.E.I.</option>
+				<option value=3>Ki・mi・ni・mu・chu</option>
 			</select>
 			<input type="submit" value="確定">
 		</form>
@@ -43,10 +43,10 @@
 			<p>登録済みの方はこちら</p>
 			<input type="text" name="name" size="30" maxlength="20">
 			<select name="music">
-				<option value="XmasSong">Xmas Song</option>
-				<option value="LoveSong">Love Song</option>
-				<option value="happySong">Happy Song</option>
-				<option value="winterSong">Winter Song</option>
+				<option value=0>クリスマス・ソング</option>
+				<option value=1>トリセツ</option>
+				<option value=2>R.Y.U.S.E.I.</option>
+				<option value=3>Ki・mi・ni・mu・chu</option>
 			</select>
 			<input type="submit" value="ログイン"> 
 		</form>
