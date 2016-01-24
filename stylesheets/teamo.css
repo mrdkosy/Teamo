@@ -101,7 +101,11 @@ header h1{
 	width: 400px;
 	margin: 200px auto 0 auto;	
 }
+.result{
+	width: 400px;
+	margin: 200px auto 0 auto;	
 
+}
 /***********************************/
 /*index.html*/
 /***********************************/
@@ -120,12 +124,12 @@ header h1{
 	border: 1px solid rgb(253, 144, 166);
 }
 /***********************************/
-/*rank.php*/
+/*rank.php, result.php*/
 /***********************************/
-.rank{
+.rank, .result{
 	text-align: center;
 }
-.rank .seleciton{
+.seleciton{
 	width: 180px;
 	height: 50px;
 	border-radius: 5px;
@@ -137,7 +141,7 @@ header h1{
 	padding-bottom: -3px;
 }
 
-.rank .seleciton:hover{
+.seleciton:hover{
 	border: 1px solid rgb(253, 144, 166);
 }
 

@@ -42,7 +42,7 @@
 
 		_status = "stop";
 
-		_endTime = 3;
+		_endTime = 10;
 
 		function get(){
 			var _ref, _ref1;
