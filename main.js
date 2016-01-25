@@ -41,7 +41,12 @@ function ID(id){
 		var bomNUM = 70; //落ちる球の数
 		//クリスマス・ソング
 		_timing[0] = [6.14, 7.486, 8.155, 9.977, 10.377, 11.611, 12.062, 13.583, 14.223, 15.059, 16.241, 17.425, 20.186, 21.593, 22.313, 23.123, 24.297, 25.113, 26.148, 27.294, 28.103, 30.910, 31.601, 32.305, 33.024, 34.054, 35.360, 36.140, 37.028, 38.402, 39.129, 40.354, 41.051, 42.233, 43.043, 44.261, 45.705, 46.448, 47.416, 48.407, 50.158, 51.310, 52.363, 53.031, 54.417, 55.288, 56.472, 57.190, 58.110, 59.095, 60.776, 61.993, 62.370, 63.072, 64.493, 65.111, 66.414, 67.192, 68.891, 69.209, 70.056, 71.111, 72.861, 73.263, 74.639, 75.090, 75.941, 76.472, 76.992, 78];
-		
+		//トリセツ
+		_timing[1] = [6.14, 7.486, 8.155, 9.977, 10.377, 11.611, 12.062, 13.583, 14.223, 15.059, 16.241, 17.425, 20.186, 21.593, 22.313, 23.123, 24.297, 25.113, 26.148, 27.294, 28.103, 30.910, 31.601, 32.305, 33.024, 34.054, 35.360, 36.140, 37.028, 38.402, 39.129, 40.354, 41.051, 42.233, 43.043, 44.261, 45.705, 46.448, 47.416, 48.407, 50.158, 51.310, 52.363, 53.031, 54.417, 55.288, 56.472, 57.190, 58.110, 59.095, 60.776, 61.993, 62.370, 63.072, 64.493, 65.111, 66.414, 67.192, 68.891, 69.209, 70.056, 71.111, 72.861, 73.263, 74.639, 75.090, 75.941, 76.472, 76.992, 78];
+		//ryusei
+		_timing[2] = [6.14, 7.486, 8.155, 9.977, 10.377, 11.611, 12.062, 13.583, 14.223, 15.059, 16.241, 17.425, 20.186, 21.593, 22.313, 23.123, 24.297, 25.113, 26.148, 27.294, 28.103, 30.910, 31.601, 32.305, 33.024, 34.054, 35.360, 36.140, 37.028, 38.402, 39.129, 40.354, 41.051, 42.233, 43.043, 44.261, 45.705, 46.448, 47.416, 48.407, 50.158, 51.310, 52.363, 53.031, 54.417, 55.288, 56.472, 57.190, 58.110, 59.095, 60.776, 61.993, 62.370, 63.072, 64.493, 65.111, 66.414, 67.192, 68.891, 69.209, 70.056, 71.111, 72.861, 73.263, 74.639, 75.090, 75.941, 76.472, 76.992, 78];
+		//kimninimuchu
+		_timing[3] = [6.14, 7.486, 8.155, 9.977, 10.377, 11.611, 12.062, 13.583, 14.223, 15.059, 16.241, 17.425, 20.186, 21.593, 22.313, 23.123, 24.297, 25.113, 26.148, 27.294, 28.103, 30.910, 31.601, 32.305, 33.024, 34.054, 35.360, 36.140, 37.028, 38.402, 39.129, 40.354, 41.051, 42.233, 43.043, 44.261, 45.705, 46.448, 47.416, 48.407, 50.158, 51.310, 52.363, 53.031, 54.417, 55.288, 56.472, 57.190, 58.110, 59.095, 60.776, 61.993, 62.370, 63.072, 64.493, 65.111, 66.414, 67.192, 68.891, 69.209, 70.056, 71.111, 72.861, 73.263, 74.639, 75.090, 75.941, 76.472, 76.992, 78];
 
 
 		_timingIndex = 0;
@@ -53,11 +58,11 @@ function ID(id){
 
 		_status = "stop";
 
-		_endTime = 10;
+		_endTime = 90;
 
 		function Game(parms) {
 			enchant();
-			_game = new Core(800, 450); //ゲームの横幅、縦幅
+			_game = new Core(800, 465); //ゲームの横幅、縦幅
 			_game.fps = 30;
 			_game.preload("./images/ocha.png", "./images/ochashadow.png");
 			_game.start();
@@ -83,18 +88,18 @@ function ID(id){
 
 				// GREAT」などの判定結果を表示するラベルを生成
 				_judge = new Label();
-				_judge.font = "36px eMyfont";
-				_judge.x = 0;
+				_judge.font = "45px eMyfont";
+				_judge.x = 315;
 				_judge.y = 0;
 				_judge.text = "";
 				_game.rootScene.addChild(_judge);
 
 				//コンボ数のラベルを生成
 				_comboNum = new Label();
-				_comboNum.font = "25px eMyfont";
-				_comboNum.x = 250;
-				_comboNum.y = 0;
-				_comboNum.text = "Combo : " + 0;
+				_comboNum.font = "30px eMyfont";
+				_comboNum.x = 750;
+				_comboNum.y = 10;
+				_comboNum.text = 0;
 				_game.rootScene.addChild(_comboNum);
 
 				 // 落下してくるオブジェクトの着地ポイントを示すイメージを設置する
@@ -147,16 +152,16 @@ function ID(id){
 							if ((-0.2 <= (_ref = this.clearTime - _timing[musicID][this.number]) && _ref <= 0.2)) {
 								_judge.text = "COOL"
 								_comboCounter ++;
-								_comboNum.text = "Combo : " + _comboCounter;
+								_comboNum.text = _comboCounter;
 								return 1;
 							} else if ((-0.4 <= (_ref1 = this.clearTime - _timing[musicID][this.number]) && _ref1 <= 0.4)) {
 								_comboCounter ++;
-								_comboNum.text = "Combo : " + _comboCounter;
+								_comboNum.text = _comboCounter;
 								return _judge.text = "GOOD";
 							} else {
 								_comboCounter = 0;
-								_comboNum.text = "Combo : " + _comboCounter;
-								return _judge.text = "BAD";
+								_comboNum.text = _comboCounter;
+								return _judge.text = "  BAD";
 							}
 						}
 					}
@@ -192,16 +197,16 @@ function ID(id){
 							if ((-0.2 <= (_ref = this.clearTime - _timing[musicID][this.number]) && _ref <= 0.2)) {
 								_judge.text = "COOL"
 								_comboCounter ++;
-								_comboNum.text = "Combo : " + _comboCounter;
+								_comboNum.text = _comboCounter;
 								return 1;
 							} else if ((-0.4 <= (_ref1 = this.clearTime - _timing[musicID][this.number]) && _ref1 <= 0.4)) {
 								_comboCounter ++;
-								_comboNum.text = "Combo : " + _comboCounter;
+								_comboNum.text =  _comboCounter;
 								return _judge.text = "GOOD";
 							} else {
 								_comboCounter = 0;
-								_comboNum.text = "Combo : " + _comboCounter;
-								return _judge.text = "BAD";
+								_comboNum.text =  _comboCounter;
+								return _judge.text = "  BAD";
 							}
 						}
 					}
@@ -235,16 +240,16 @@ function ID(id){
 							if ((-0.2 <= (_ref = this.clearTime - _timing[musicID][this.number]) && _ref <= 0.2)) {
 								_judge.text = "COOL"
 								_comboCounter ++;
-								_comboNum.text = "Combo : " + _comboCounter;
+								_comboNum.text = _comboCounter;
 								return 1;
 							} else if ((-0.4 <= (_ref1 = this.clearTime - _timing[musicID][this.number]) && _ref1 <= 0.4)) {
 								_comboCounter ++;
-								_comboNum.text = "Combo : " + _comboCounter;
+								_comboNum.text =  _comboCounter;
 								return _judge.text = "GOOD";
 							} else {
 								_comboCounter = 0;
-								_comboNum.text = "Combo : " + _comboCounter;
-								return _judge.text = "BAD";
+								_comboNum.text =  _comboCounter;
+								return _judge.text = " BAD";
 							}
 						}
 					}
@@ -278,16 +283,16 @@ function ID(id){
 							if ((-0.2 <= (_ref = this.clearTime - _timing[musicID][this.number]) && _ref <= 0.2)) {
 								_judge.text = "COOL"
 								_comboCounter ++;
-								_comboNum.text = "Combo : " + _comboCounter;
+								_comboNum.text =_comboCounter;
 								return 1;
 							} else if ((-0.4 <= (_ref1 = this.clearTime - _timing[musicID][this.number]) && _ref1 <= 0.4)) {
 								_comboCounter ++;
-								_comboNum.text = "Combo : " + _comboCounter;
+								_comboNum.text =  _comboCounter;
 								return _judge.text = "GOOD";
 							} else {
 								_comboCounter = 0;
-								_comboNum.text = "Combo : " + _comboCounter;
-								return _judge.text = "BAD";
+								_comboNum.text =  _comboCounter;
+								return _judge.text = " BAD";
 							}
 						}
 					}
@@ -300,7 +305,6 @@ function ID(id){
 					if(_comboCounter > _maxScore){
 						_maxScore = _comboCounter;
 					}
-					console.log(_maxScore);
 
 					if (_isNoteGenerateTiming()) {
 						_generateNote[laneNumber[_timingIndex]](_timingIndex);
@@ -312,6 +316,7 @@ function ID(id){
 						_yt.setVolume(_yt.getVolume() - 1);
 						if (_yt.getVolume() <= 0) {
 							// _yt.stop();
+							document.getElementById("score").innerHTML='<form action="rank.php" method "get"><input type="hidden" name="_maxScore"></form>';
 							location.href="./rank.php"; //音楽が終わったら、結果のページへ移動
 							return _status = "end";
 						}

@@ -26,18 +26,26 @@
 	<div id="main" class="rank">
 		<h1>あなたの今回の結果</h1>
 
+		<?php 
+		echo $_GET['_maxScore'];echo "点";echo "<br>";
+		//あなたの部分をインサートができたらこれに変える
+		/*$db=new PDO("sqlite:teamo3.sql");
+		$stmt=$db->prepare("SELECT p.name,max(g.gid) FROM game g,player p WHERE p.pid=g.gid");
+		$stmt->execute();
+		$r1=$stmt->fetch(PDO::FETCH_NUM);
+		echo $r1[0];*/
+		?>
 		<a href="./index.php"><div class="seleciton">もう一度プレイ</div></a>
 		<a href="./result.php"><div class="seleciton">ランキングを見る</div></a>
 
 
-		<!--ここに結果をかいていまやったゲームの結果かいてこのページではPHPはでーたの更新だけに使ってます。-->
-		<?php
+	<?php
+
 		$db=new PDO("sqlite:teamo3.sql");
 		$stmt=$db->prepare("SELECT max(g.gid) FROM game g");
 		$stmt->execute();
 		$r1=$stmt->fetch(PDO::FETCH_NUM);
-			//このgidにscoreをいれて更新ー＞echo $r1[0];
-			//ここのscore=○○のところに出た結果の値をいれて！
+		$gid=$r1[0];
 		$stmt=$db->prepare("UPDATE game SET score=/*○○*/ WHERE gid=4");
 		$flag=$stmt->execute();
 		if($flag){
@@ -46,6 +54,9 @@
 			echo "false";
 		}
 		?>
+		
+		<!--ここに結果をかいていまやったゲームの結果かいてこのページではPHPはでーたの更新だけに使ってます。-->
+
 	</div>
 </body>
 </html>

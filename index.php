@@ -39,7 +39,7 @@
 			<input type="submit" value="確定">
 		</form>
 
-		<form action="play2.php" method "post"> 
+		<form action="play2.php" method "get"> 
 			<p>登録済みの方はこちら</p>
 			<input type="text" name="name" size="30" maxlength="20">
 			<select name="music">
@@ -53,7 +53,7 @@
 		<?php 
 		try {
 			$db=new PDO("sqlite:teamo3.sql");
-			echo "true";
+			//echo "true";
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
 			$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 

@@ -26,24 +26,30 @@
 	<div id="main" class="result">
 
 		<h1>ランキング</h1>
+		<?php
+$db=new PDO("sqlite:teamo3.sql");
+$db->query('SET NAMES utf8');
+$stmt=$db->prepare("SELECT p.name,g.music,g.score FROM player p, game g WHERE p.pid=g.pid ORDER BY g.score desc");
+$stmt->execute();
+//$r1=$stmt->fetch(PDO::FETCH_ASSOC);
+$r1=$stmt->fetchALL();
+// echo "<br><br>";
+for($num1=0;$num1<3;$num1++){
+	echo $num1+1; echo "位  ";
+	for ($num2=0;$num2<3;$num2++){
+		echo $r1[$num1][$num2];
+		echo "  ";
+
+	}
+	echo "点";
+	echo "<br>";
+}
+	echo "<br><br>";
+
+?>
 		<a href="./index.php"><div class="seleciton">もう一度プレイ</div></a>
 
-		<?php
-		$db=new PDO("sqlite:teamo3.sql");
-		$db->query('SET NAMES utf8');
-		$stmt=$db->prepare("SELECT　p.name, FROM player p, game g WHERE p.pid=g.pid ORDER BY g.score desc");
-		// echo"1";
-		$stmt->execute();
-		echo "a";
-
-		/*while($r1=$stmt->fetch(PDO::FETCH_ASS0C)){
-			echo $r1['name'];
-			echo $r1['music'];
-			echo $r1['score'];
-			echo "<br>";
-		}*/
-
-		?>
+		
 	</div>
 
 </body>
