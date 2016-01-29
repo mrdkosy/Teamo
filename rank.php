@@ -46,7 +46,7 @@
 		$stmt->execute();
 		$r1=$stmt->fetch(PDO::FETCH_NUM);
 		$gid=$r1[0];
-		$stmt=$db->prepare("UPDATE game SET score=/*○○*/ WHERE gid=4");
+		$stmt=$db->prepare("UPDATE game SET score=10 WHERE gid=4");
 		$flag=$stmt->execute();
 		if($flag){
 			echo "get score";

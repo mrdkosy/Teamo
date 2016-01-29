@@ -51,13 +51,15 @@
 					$r3=$stmt->fetch(PDO::FETCH_NUM);
 					$gid=$r3[0]+1;
 		//$db->exec("INSERT INTO game(gid,pid,music,score) VALUE ('$gid','$r1[0]','$_POST['music']','0')");
-
 					// echo "<div id=\"enchant-stage\"></div>";
 					// echo "<script type=\"text/javascript\" src=\"enchant.js\"></script>";
 					// echo "<script type=\"text/javascript\" src=\"main.js\"></script>";   
 
 				}else{
-					echo "接続できませんでした。前ページに戻って新規登録からはじめてください。";
+					echo "接続できませんでした。";
+					echo "<br>";
+					echo "前ページに戻って新規登録からはじめてください。";
+					echo "<div id=\"whiteOut\"></div>";
 				}		
 			} catch (PDOException $e) {
 				echo "接続失敗";
@@ -75,7 +77,7 @@
 			var hoge = <?php echo json_encode($_GET['music']); ?>;
 			ID(hoge);
 		</script>
-
+		<div id="score"></div>
 	</div>
 </body>
 </html>

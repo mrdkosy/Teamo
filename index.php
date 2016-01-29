@@ -28,13 +28,21 @@
 
 	<div id="main" class="index">
 		<form action="play.php" method "get"> 
-			<p>プレーヤー新規登録</p>
+			<p>プレーヤー新規登録・曲選択</p>
 			<input type="text" name="newname" size="30" maxlength="20">
 			<select name="music">
-				<option value=0>クリスマス・ソング</option>
-				<option value=1>トリセツ</option>
-				<option value=2>R.Y.U.S.E.I.</option>
-				<option value=3>Ki・mi・ni・mu・chu</option>
+				<option value=0>クリスマス・ソング(back number)</option>
+				<option value=1>トリセツ(西野カナ)</option>
+				<option value=2>R.Y.U.S.E.I.(三代目J Soul Brothers)</option>
+				<option value=3>Ki・mi・ni・mu・chu(EXILE)</option>
+				<option value=4>千本桜</option>
+				<option value=5>あなたに恋をしてみました(chay)</option>
+				<option value=6>プレゼント(SEKAI NO OWARI)</option>
+				<option value=7>瞳(大原櫻子)</option>
+				<option value=8>THE Sharehappi(三代目J Soul Brothers)</option>
+				<option value=9>私以外私じゃないの(ゲスの極み乙女。)</option>
+				<option value=10>Mr.Snowman(E-girls)</option>
+				<option value=11>あなたがここにいて抱き...(miwa)</option>
 			</select>
 			<input type="submit" value="確定">
 		</form>
@@ -43,10 +51,18 @@
 			<p>登録済みの方はこちら</p>
 			<input type="text" name="name" size="30" maxlength="20">
 			<select name="music">
-				<option value=0>クリスマス・ソング</option>
-				<option value=1>トリセツ</option>
-				<option value=2>R.Y.U.S.E.I.</option>
-				<option value=3>Ki・mi・ni・mu・chu</option>
+				<option value=0>クリスマス・ソング(back number)</option>
+				<option value=1>トリセツ(西野カナ)</option>
+				<option value=2>R.Y.U.S.E.I.(三代目J Soul Brothers)</option>
+				<option value=3>Ki・mi・ni・mu・chu(EXILE)</option>
+				<option value=4>千本桜</option>
+				<option value=5>あなたに恋をしてみました(chay)</option>
+				<option value=6>プレゼント(SEKAI NO OWARI)</option>
+				<option value=7>瞳(大原櫻子)</option>
+				<option value=8>THE Sharehappi(三代目J Soul Brothers)</option>
+				<option value=9>私以外私じゃないの(ゲスの極み乙女。)</option>
+				<option value=10>Mr.Snowman(E-girls)</option>
+				<option value=11>あなたがここにいて抱き...(miwa)</option>
 			</select>
 			<input type="submit" value="ログイン"> 
 		</form>
