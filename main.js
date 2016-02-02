@@ -72,7 +72,7 @@ function ID(id){
 
 		_status = "stop";
 
-		_endTime = 20;
+		_endTime = 3;
 
 		function Game(parms) {
 			enchant();
@@ -331,8 +331,8 @@ function ID(id){
 						_yt.setVolume(_yt.getVolume() - 1);
 						if (_yt.getVolume() <= 0) {
 							// _yt.stop();
-							document.getElementById("score").innerHTML='<form action="rank.php" method "get"><input type="hidden" name="_maxScore" value=_maxScore></form>';
-							// location.href="./rank.php"; //音楽が終わったら、結果のページへ移動
+							// document.getElementById("score").innerHTML='<form action="rank.php" method="get"><input type="hidden" name="max" value=_maxScore></form>';
+							location.href="./rank.php"; //音楽が終わったら、結果のページへ移動
 							return _status = "end";
 						}
 					}

@@ -27,7 +27,7 @@
 		<h1>あなたの今回の結果</h1>
 
 		<?php 
-		echo $_GET['_maxScore'];echo "点";echo "<br>";
+		echo $_GET['max'];echo "点";echo "<br>";
 		//あなたの部分をインサートができたらこれに変える
 		/*$db=new PDO("sqlite:teamo3.sql");
 		$stmt=$db->prepare("SELECT p.name,max(g.gid) FROM game g,player p WHERE p.pid=g.gid");

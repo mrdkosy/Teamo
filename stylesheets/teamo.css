@@ -151,6 +151,12 @@ header h1{
 	z-index: -10;
 }
 
+#score{
+	/*background-color: red;*/
+	/*display: block;*/
+	/*z-index: 10;*/
+}
+
 /***********************************/
 /*rank.php, result.php*/
 /***********************************/

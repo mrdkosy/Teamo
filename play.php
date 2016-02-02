@@ -80,7 +80,9 @@
 			var hoge = <?php echo json_encode($_GET['music']); ?>;
 			ID(hoge);
 		</script>
-		<div id="score"></div>
+		<div id="score">
+			<form action="rank.php" method="get"><input type="hidden" name="max" value="_maxScore"></form>
+		</div>
 	</div>
 </body>
 </html>
