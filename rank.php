@@ -28,6 +28,8 @@
 
 		<?php 
 		echo $_GET['maxScore'];echo "点";echo "<br>";
+		echo "<br>";
+
 		$getScore=(int)$_GET['maxScore'];
 		//あなたの部分をインサートができたらこれに変える
 		/*$db=new PDO("sqlite:teamo3.sql");
@@ -48,7 +50,6 @@
 		$r1=$stmt->fetch(PDO::FETCH_NUM);
 		$gid=$r1[0];
 		$pid=$r1[1];
-
 		echo $getScore;
 
 		$stmt=$db->prepare("UPDATE game SET score=$getScore WHERE gid=$gid");
@@ -58,6 +59,7 @@
 		}else{
 			echo "false";
 		}
+		echo "<br>";
 		//レベル判定
 
 		$stmt=$db->prepare("SELECT sum(g.score) FROM game g,player p WHERE g.pid=p.pid and p.pid=$pid");
@@ -65,7 +67,6 @@
 		$r2=$stmt->fetch(PDO::FETCH_NUM);
 		//echo $r2[0];
 		$level=(int)($r2[0]/10);
-		echo $level;
 		$stmt=$db->prepare("UPDATE player SET level=$level WHERE pid=$pid");
 		$flag=$stmt->execute();
 		if($flag){
@@ -73,6 +74,8 @@
 		}else{
 			echo "false";
 		}
+		echo $level;
+
 		?>
 		
 		<!--ここに結果をかいていまやったゲームの結果かいてこのページではPHPはでーたの更新だけに使ってます。-->

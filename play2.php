@@ -56,7 +56,7 @@
 					$musicIdName = $_GET['music'];
 					$musicName = split('&', $musicIdName);
 					$stmt->bindValue(3, $musicName[1]);
-					echo $musicName[1];
+					echo "Let's play";echo $musicName[1];
 					
 					$stmt->bindValue(4, (int)'0',PDO::PARAM_INT);
 					$flag=$stmt->execute();
