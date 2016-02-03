@@ -28,9 +28,6 @@
 
 			try {
 				$db=new PDO("sqlite:teamo3.sql");
-	//echo "hello2"."<br>";
-	//$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    	
-	//$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 				$db->query('SET NAMES utf8');
 //登録済みのとき（データの検索）
 				$name=$_GET['name'];
@@ -50,10 +47,15 @@
 					$stmt->execute();	
 					$r3=$stmt->fetch(PDO::FETCH_NUM);
 					$gid=$r3[0]+1;
-		//$db->exec("INSERT INTO game(gid,pid,music,score) VALUE ('$gid','$r1[0]','$_POST['music']','0')");
-					// echo "<div id=\"enchant-stage\"></div>";
-					// echo "<script type=\"text/javascript\" src=\"enchant.js\"></script>";
-					// echo "<script type=\"text/javascript\" src=\"main.js\"></script>";   
+
+					$sql="INSERT INTO game(gid,pid,music,score) VALUES (?,?,?,?)";
+					$stmt=$db->prepare($sql);
+					$stmt->bindValue(1, (int)$gid,PDO::PARAM_INT);
+					$stmt->bindValue(2, (int)$r1[0],PDO::PARAM_INT);
+					$stmt->bindValue(3, $_GET['music']);
+					$stmt->bindValue(4, (int)'0',PDO::PARAM_INT);
+					$flag=$stmt->execute();
+					
 
 				}else{
 					echo "接続できませんでした。";
@@ -61,6 +63,7 @@
 					echo "前ページに戻って新規登録からはじめてください。";
 					echo "<div id=\"whiteOut\"></div>";
 				}		
+
 			} catch (PDOException $e) {
 				echo "接続失敗";
 			}
@@ -77,7 +80,7 @@
 			var hoge = <?php echo json_encode($_GET['music']); ?>;
 			ID(hoge);
 		</script>
-		<div id="score"></div>
+		<form action="rank.php" method="get" name="score" id="score"></form>	
 	</div>
 </body>
 </html>

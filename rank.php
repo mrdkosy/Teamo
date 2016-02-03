@@ -27,7 +27,8 @@
 		<h1>あなたの今回の結果</h1>
 
 		<?php 
-		echo $_GET['max'];echo "点";echo "<br>";
+		echo $_GET['maxScore'];echo "点";echo "<br>";
+		$getScore=(int)$_GET['maxScore'];
 		//あなたの部分をインサートができたらこれに変える
 		/*$db=new PDO("sqlite:teamo3.sql");
 		$stmt=$db->prepare("SELECT p.name,max(g.gid) FROM game g,player p WHERE p.pid=g.gid");
@@ -42,14 +43,33 @@
 	<?php
 
 		$db=new PDO("sqlite:teamo3.sql");
-		$stmt=$db->prepare("SELECT max(g.gid) FROM game g");
+		$stmt=$db->prepare("SELECT max(g.gid),g.pid FROM game g");
 		$stmt->execute();
 		$r1=$stmt->fetch(PDO::FETCH_NUM);
 		$gid=$r1[0];
-		$stmt=$db->prepare("UPDATE game SET score=10 WHERE gid=4");
+		$pid=$r1[1];
+
+		echo $getScore;
+
+		$stmt=$db->prepare("UPDATE game SET score=$getScore WHERE gid=$gid");
 		$flag=$stmt->execute();
 		if($flag){
 			echo "get score";
+		}else{
+			echo "false";
+		}
+		//レベル判定
+
+		$stmt=$db->prepare("SELECT sum(g.score) FROM game g,player p WHERE g.pid=p.pid and p.pid=$pid");
+		$stmt->execute();
+		$r2=$stmt->fetch(PDO::FETCH_NUM);
+		//echo $r2[0];
+		$level=(int)($r2[0]/10);
+		echo $level;
+		$stmt=$db->prepare("UPDATE player SET level=$level WHERE pid=$pid");
+		$flag=$stmt->execute();
+		if($flag){
+			echo "change level";
 		}else{
 			echo "false";
 		}

@@ -59,11 +59,13 @@
 				echo $_GET['newname'];echo "さんようこそTeamoへ";echo "<br>";
 			 //echo "Let's play";echo $_GET['music'];
 
-
-
-	//$sql="INSERT INTO game(gid,pid,music,score) VALUES (?,?,?,?)";
-	//$stmt=$db->prepare($sql);
-	//$flag=$stmt->execute(['$r1[0]+1','$_POST','0']);
+				$sql="INSERT INTO game(gid,pid,music,score) VALUES (?,?,?,?)";
+				$stmt=$db->prepare($sql);
+				$stmt->bindValue(1, (int)$newgid,PDO::PARAM_INT);
+				$stmt->bindValue(2, (int)$newid,PDO::PARAM_INT);
+				$stmt->bindValue(3, $_GET['music']);//ここに音楽名をいれてほしい！！
+				$stmt->bindValue(4, (int)'0',PDO::PARAM_INT);	
+				$flag=$stmt->execute();
 
 			} catch (PDOException $e) {
 			// echo "接続失敗";
@@ -80,9 +82,7 @@
 			var hoge = <?php echo json_encode($_GET['music']); ?>;
 			ID(hoge);
 		</script>
-		<div id="score">
-			<form action="rank.php" method="get"><input type="hidden" name="max" value="_maxScore"></form>
-		</div>
+		<form action="rank.php" method="get" name="score" id="score"></form>
 	</div>
 </body>
 </html>
