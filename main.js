@@ -72,7 +72,7 @@ function ID(id){
 
 		_status = "stop";
 
-		_endTime = 30;
+		_endTime = 50;
 
 		function Game(parms) {
 			enchant();
