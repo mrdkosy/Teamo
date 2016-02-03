@@ -27,43 +27,42 @@
 	</header>
 
 	<div id="main" class="index">
-		<form action="play.php" method "get"> 
+		<form action="play.php" method "get" name="musicList"> 
 			<p>プレーヤー新規登録・曲選択</p>
-			<input type="text" name="newname" size="30" maxlength="20">
+			<input type="text" name="newname" size="26" maxlength="20">
 			<select name="music">
-				<option value=0 name="クリスマス・ソング">クリスマス・ソング(back number)</option>
-				<option value=1 name="トリセツ">トリセツ(西野カナ)</option>
-				<option value=2 name="R.Y.U.S.E.I.">R.Y.U.S.E.I.(三代目J Soul Brothers)</option>
-				<option value=3 name="Ki・mi・ni・mu・chu">Ki・mi・ni・mu・chu(EXILE)</option>
-				<option value=4 name="千本桜">千本桜</option>
-				<option value=5 name="未来">未来(コブクロ)</option>
-				<option value=6 name="プレゼント">プレゼント(SEKAI NO OWARI)</option>
-				<option value=7 name="瞳">瞳(大原櫻子)</option>
-				<option value=8 name="THE Sharehappi">THE Sharehappi(三代目J Soul Brothers)</option>
-				<option value=9 name="私以外私じゃないの">私以外私じゃないの(ゲスの極み乙女。)</option>
-				<option value=10 name="Mr.Snowman">Mr.Snowman(E-girls)</option>
-				<option value=11 name="あなたがここにいて抱きしめることができるなら">あなたがここにいて抱き...(miwa)</option>
+				<option value="0&クリスマス・ソング">クリスマス・ソング(back number)</option>
+				<option value="1&トリセツ">トリセツ(西野カナ)</option>
+				<option value="2&R.Y.U.S.E.I.">R.Y.U.S.E.I.(三代目J Soul Brothers)</option>
+				<option value="3&Ki・mi・ni・mu・chu">Ki・mi・ni・mu・chu(EXILE)</option>
+				<option value="4&千本桜">千本桜</option>
+				<option value="5&未来">未来(コブクロ)</option>
+				<option value="6&プレゼント">プレゼント(SEKAI NO OWARI)</option>
+				<option value="7&瞳">瞳(大原櫻子)</option>
+				<option value="8&THE Sharehappi">THE Sharehappi(三代目J Soul Brothers)</option>
+				<option value="9私以外私じゃないの">私以外私じゃないの(ゲスの極み乙女。)</option>
+				<option value="10&Mr.Snowman">Mr.Snowman(E-girls)</option>
+				<option value="11&あなたがここにいて抱きしめることができるなら">あなたがここにいて抱き...(miwa)</option>
 			</select>
 			<input type="submit" value="確定">
 		</form>
 
-		<form action="play2.php" method "get"> 
+		<form action="play2.php" method "get" name="musicList"> 
 			<p>登録済みの方はこちら</p>
-			<input type="text" name="name" size="30" maxlength="20">
+			<input type="text" name="name" size="26" maxlength="20">
 			<select name="music">
-				<option value=0 name="クリスマス・ソング">クリスマス・ソング(back number)</option>
-				<option value=1 name="トリセツ">トリセツ(西野カナ)</option>
-				<option value=2 name="R.Y.U.S.E.I.">R.Y.U.S.E.I.(三代目J Soul Brothers)</option>
-				<option value=3 name="Ki・mi・ni・mu・chu">Ki・mi・ni・mu・chu(EXILE)</option>
-				<option value=4 name="千本桜">千本桜</option>
-				<option value=5 name="未来">未来(コブクロ)</option>
-				<option value=6 name="プレゼント">プレゼント(SEKAI NO OWARI)</option>
-				<option value=7 name="瞳">瞳(大原櫻子)</option>
-				<option value=8 name="THE Sharehappi">THE Sharehappi(三代目J Soul Brothers)</option>
-				<option value=9 name="私以外私じゃないの">私以外私じゃないの(ゲスの極み乙女。)</option>
-				<option value=10 name="Mr.Snowman">Mr.Snowman(E-girls)</option>
-				<option value=11 name="あなたがここにいて抱きしめることができるなら">あなたがここにいて抱き...(miwa)</option>
-			</select>
+				<option value="0&クリスマス・ソング">クリスマス・ソング(back number)</option>
+				<option value="1&トリセツ">トリセツ(西野カナ)</option>
+				<option value="2&R.Y.U.S.E.I.">R.Y.U.S.E.I.(三代目J Soul Brothers)</option>
+				<option value="3&Ki・mi・ni・mu・chu">Ki・mi・ni・mu・chu(EXILE)</option>
+				<option value="4&千本桜">千本桜</option>
+				<option value="5&未来">未来(コブクロ)</option>
+				<option value="6&プレゼント">プレゼント(SEKAI NO OWARI)</option>
+				<option value="7&瞳">瞳(大原櫻子)</option>
+				<option value="8&THE Sharehappi">THE Sharehappi(三代目J Soul Brothers)</option>
+				<option value="9私以外私じゃないの">私以外私じゃないの(ゲスの極み乙女。)</option>
+				<option value="10&Mr.Snowman">Mr.Snowman(E-girls)</option>
+				<option value="11&あなたがここにいて抱きしめることができるなら">あなたがここにいて抱き...(miwa)</option>			</select>
 			<input type="submit" value="ログイン"> 
 		</form>
 		<?php 

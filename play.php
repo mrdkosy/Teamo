@@ -63,7 +63,12 @@
 				$stmt=$db->prepare($sql);
 				$stmt->bindValue(1, (int)$newgid,PDO::PARAM_INT);
 				$stmt->bindValue(2, (int)$newid,PDO::PARAM_INT);
-				$stmt->bindValue(3, $_GET['music']);//ここに音楽名をいれてほしい！！
+
+				$musicIdName = $_GET['music'];
+				$musicName = split('&', $musicIdName);
+				$stmt->bindValue(3, $musicName[1]);//ここに音楽名をいれてほしい！！
+				echo $musicName[1];
+
 				$stmt->bindValue(4, (int)'0',PDO::PARAM_INT);	
 				$flag=$stmt->execute();
 
@@ -79,7 +84,7 @@
 		<script type="text/javascript" src="enchant.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 		<script>
-			var hoge = <?php echo json_encode($_GET['music']); ?>;
+			var hoge = <?php echo json_encode($musicName[0]); ?>;
 			ID(hoge);
 		</script>
 		<form action="rank.php" method="get" name="score" id="score"></form>
